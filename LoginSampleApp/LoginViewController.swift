@@ -37,4 +37,6 @@ class LoginViewController: UIViewController {
         self.appleLoginButton.layer.borderWidth = 1
         self.appleLoginButton.layer.borderColor = UIColor.white.cgColor
     }
+    
+    
 }
