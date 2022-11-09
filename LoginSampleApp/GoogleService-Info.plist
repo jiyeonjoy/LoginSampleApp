@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>971541575797-pu12d7qmtbn0p6vl0gh32sanetacg3e5.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.971541575797-pu12d7qmtbn0p6vl0gh32sanetacg3e5</string>
+	<key>API_KEY</key>
+	<string>AIzaSyB9Be2OXY8br82p4bX5Gv4Fzh8JEaWJdaU</string>
+	<key>GCM_SENDER_ID</key>
+	<string>971541575797</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.joyworld.LoginSampleApp</string>
+	<key>PROJECT_ID</key>
+	<string>login-sample-app-1c050</string>
+	<key>STORAGE_BUCKET</key>
+	<string>login-sample-app-1c050.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:971541575797:ios:bf4cc3fc954d80ba4ee03c</string>
+</dict>
+</plist>
