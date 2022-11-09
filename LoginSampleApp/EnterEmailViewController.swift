@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class EnterEmailViewController: UIViewController {
     
@@ -18,7 +19,7 @@ class EnterEmailViewController: UIViewController {
         super.viewDidLoad()
         //이메일 주소 입력 활성화
         self.emailTextField.becomeFirstResponder()
-
+        
         //다음 버튼 UI
         self.nextButton.layer.cornerRadius = 30
         
@@ -35,6 +36,27 @@ class EnterEmailViewController: UIViewController {
         
         //Navigation Bar 보이기
         self.navigationController?.navigationBar.isHidden = false
+    }
+    
+    @IBAction func nextButtonAction(_ sender: UIButton) {
+        //Firebase 이메일, 비밀번호 인증
+        let email = self.emailTextField.text ?? ""
+        let password = self.passwordTextField.text ?? ""
+        
+        //신규 사용자 생성
+        Auth.auth().createUser(withEmail: email, password: password) {[weak self] authResult, error in
+            guard let self = self else { return }
+
+            self.showMainViewController()
+        }
+    }
+    
+    ///Main 화면으로 보내기
+    func showMainViewController() {
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let mainViewController = storyboard.instantiateViewController(identifier: "MainViewController")
+        mainViewController.modalPresentationStyle = .fullScreen
+        self.navigationController?.show(mainViewController, sender: nil)
     }
 }
 

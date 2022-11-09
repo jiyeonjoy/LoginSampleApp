@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class MainViewController: UIViewController {
     @IBOutlet weak var welcomeLabel: UILabel!
@@ -22,6 +23,13 @@ class MainViewController: UIViewController {
         super.viewWillAppear(animated)
         
         self.navigationController?.navigationBar.isHidden = true
+        
+        let displayName = Auth.auth().currentUser?.email ?? ""
+        
+        self.welcomeLabel.text = """
+            환영합니다.
+            \(displayName)님
+            """
     }
     
     @IBAction func logoutButtonAction(_ sender: UIButton) {

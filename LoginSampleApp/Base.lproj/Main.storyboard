@@ -180,6 +180,9 @@
                                 <state key="normal" title="다음">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="nextButtonAction:" destination="T18-vf-cPL" eventType="touchUpInside" id="kmz-NC-O1z"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="BtR-yt-o8g"/>
@@ -197,7 +200,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="5eE-h1-gX5" id="AVl-wL-CMG"/>
                         <outlet property="errorDescriptionLabel" destination="agf-2X-FBd" id="GAN-CG-IGW"/>
-                        <outlet property="nextButton" destination="Nko-gf-Gag" id="SUk-sx-huT"/>
+                        <outlet property="nextButton" destination="Nko-gf-Gag" id="VF1-nQ-Cth"/>
                         <outlet property="passwordTextField" destination="KwY-0N-zpC" id="DR8-Us-Bxq"/>
                     </connections>
                 </viewController>
@@ -208,7 +211,7 @@
         <!--Main View Controller-->
         <scene sceneID="Fiq-DE-cxY">
             <objects>
-                <viewController id="b3b-F2-gMd" customClass="MainViewController" customModule="LoginSampleApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainViewController" id="b3b-F2-gMd" customClass="MainViewController" customModule="LoginSampleApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nVR-0U-RXB">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
