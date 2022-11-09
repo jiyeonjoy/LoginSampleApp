@@ -6,17 +6,23 @@
 //
 
 import UIKit
+import GoogleSignIn
+import FirebaseAuth
+import Firebase
 
 class LoginViewController: UIViewController {
     
     @IBOutlet weak var emailLoginButton: UIButton!
-    @IBOutlet weak var googleLoginButton: UIButton!
+    @IBOutlet weak var googleLoginButton: GIDSignInButton!
     @IBOutlet weak var appleLoginButton: UIButton!
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         // Navigation Bar 가리기
         self.navigationController?.navigationBar.isHidden = true
+        
+        //GoogleSignIn
+        GIDSignIn.sharedInstance()?.presentingViewController = self
     }
     
     override func viewDidLoad() {
@@ -38,5 +44,10 @@ class LoginViewController: UIViewController {
         self.appleLoginButton.layer.borderColor = UIColor.white.cgColor
     }
     
+    @IBAction func googleLoginButtonAction(_ sender: UIButton) {
+        GIDSignIn.sharedInstance().signIn()
+    }
     
+    @IBAction func appleLoginButtonAction(_ sender: UIButton) {
+    }
 }
