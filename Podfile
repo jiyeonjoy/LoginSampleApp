@@ -6,7 +6,8 @@ target 'LoginSampleApp' do
   use_frameworks!
 
   # Pods for LoginSampleApp
-  pod 'Firebase/Auth'
+  pod 'Firebase'
+  pod 'FirebaseAuth', '>= 9.6.0'
   pod 'GoogleSignIn', '~> 5.0.2'
 
 end

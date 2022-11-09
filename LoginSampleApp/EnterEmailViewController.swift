@@ -9,7 +9,6 @@ import UIKit
 import FirebaseAuth
 
 class EnterEmailViewController: UIViewController {
-    
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var errorDescriptionLabel: UILabel!
@@ -19,7 +18,7 @@ class EnterEmailViewController: UIViewController {
         super.viewDidLoad()
         //이메일 주소 입력 활성화
         self.emailTextField.becomeFirstResponder()
-        
+
         //다음 버튼 UI
         self.nextButton.layer.cornerRadius = 30
         
@@ -46,7 +45,7 @@ class EnterEmailViewController: UIViewController {
         //신규 사용자 생성
         Auth.auth().createUser(withEmail: email, password: password) {[weak self] authResult, error in
             guard let self = self else { return }
-
+            
             if let error = error {
                 let code = (error as NSError).code
                 switch code {
@@ -61,14 +60,6 @@ class EnterEmailViewController: UIViewController {
         }
     }
     
-    ///Main 화면으로 보내기
-    func showMainViewController() {
-        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        let mainViewController = storyboard.instantiateViewController(identifier: "MainViewController")
-        mainViewController.modalPresentationStyle = .fullScreen
-        self.navigationController?.show(mainViewController, sender: nil)
-    }
-    
     ///Firebase 인증 로그인
     func loginUser(withEmail email: String, password: String) {
         Auth.auth().signIn(withEmail: email, password: password) {[weak self] _, error in
@@ -80,6 +71,14 @@ class EnterEmailViewController: UIViewController {
                 self.showMainViewController()
             }
         }
+    }
+    
+    ///Main 화면으로 보내기
+    func showMainViewController() {
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let mainViewController = storyboard.instantiateViewController(identifier: "MainViewController")
+        mainViewController.modalPresentationStyle = .fullScreen
+        self.navigationController?.show(mainViewController, sender: nil)
     }
 }
 
@@ -96,3 +95,4 @@ extension EnterEmailViewController: UITextFieldDelegate {
         self.nextButton.isEnabled = !isEmailEmpty && !isPasswordEmpty
     }
 }
+
