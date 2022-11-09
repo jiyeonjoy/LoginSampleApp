@@ -205,11 +205,71 @@
             </objects>
             <point key="canvasLocation" x="147" y="-44"/>
         </scene>
+        <!--Main View Controller-->
+        <scene sceneID="Fiq-DE-cxY">
+            <objects>
+                <viewController id="b3b-F2-gMd" customClass="MainViewController" customModule="LoginSampleApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nVR-0U-RXB">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="환영합니다" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pc9-gt-3wQ">
+                                <rect key="frame" x="142.33333333333334" y="423.66666666666669" width="108.33333333333334" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fh1-5g-nh3">
+                                <rect key="frame" x="149" y="476.66666666666669" width="95" height="30"/>
+                                <state key="normal" title="프로필 업데이트">
+                                    <color key="titleColor" red="0.86959570649999995" green="0.86973899600000004" blue="0.86956536770000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MNO-kQ-r6z">
+                                <rect key="frame" x="155.66666666666666" y="514.66666666666663" width="82" height="30"/>
+                                <state key="normal" title="비밀번호 변경">
+                                    <color key="titleColor" red="0.86959570649999995" green="0.86973899600000004" blue="0.86956536770000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TBS-eU-0NB">
+                                <rect key="frame" x="170.66666666666666" y="580.66666666666663" width="52" height="30"/>
+                                <state key="normal" title="로그아웃">
+                                    <color key="titleColor" systemColor="systemPinkColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="logoutButtonAction:" destination="b3b-F2-gMd" eventType="touchUpInside" id="xw6-nU-nDx"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="bnI-Q4-bLs"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Pc9-gt-3wQ" firstAttribute="centerY" secondItem="bnI-Q4-bLs" secondAttribute="centerY" id="1kh-Dz-6a0"/>
+                            <constraint firstItem="TBS-eU-0NB" firstAttribute="centerX" secondItem="bnI-Q4-bLs" secondAttribute="centerX" id="MSu-Sg-QIP"/>
+                            <constraint firstItem="TBS-eU-0NB" firstAttribute="top" secondItem="MNO-kQ-r6z" secondAttribute="bottom" constant="36" id="fnV-7i-0nF"/>
+                            <constraint firstItem="Fh1-5g-nh3" firstAttribute="centerX" secondItem="bnI-Q4-bLs" secondAttribute="centerX" id="gvS-Se-BrF"/>
+                            <constraint firstItem="Fh1-5g-nh3" firstAttribute="top" secondItem="Pc9-gt-3wQ" secondAttribute="bottom" constant="23" id="hP3-MM-b0b"/>
+                            <constraint firstItem="MNO-kQ-r6z" firstAttribute="centerX" secondItem="bnI-Q4-bLs" secondAttribute="centerX" id="i6K-Mx-D9W"/>
+                            <constraint firstItem="Pc9-gt-3wQ" firstAttribute="centerX" secondItem="bnI-Q4-bLs" secondAttribute="centerX" id="mZv-td-Lpf"/>
+                            <constraint firstItem="MNO-kQ-r6z" firstAttribute="top" secondItem="Fh1-5g-nh3" secondAttribute="bottom" constant="8" symbolic="YES" id="zeB-Tu-GhO"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="welcomeLabel" destination="Pc9-gt-3wQ" id="0Hm-f7-KjH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nCM-Ly-34A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="817" y="-31"/>
+        </scene>
     </scenes>
     <resources>
         <image name="logo_apple" width="33.333332061767578" height="33.333332061767578"/>
         <image name="logo_google" width="33.333332061767578" height="33.333332061767578"/>
         <image name="music.note.house.fill" catalog="system" width="128" height="104"/>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
