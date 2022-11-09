@@ -47,7 +47,17 @@ class EnterEmailViewController: UIViewController {
         Auth.auth().createUser(withEmail: email, password: password) {[weak self] authResult, error in
             guard let self = self else { return }
 
-            self.showMainViewController()
+            if let error = error {
+                let code = (error as NSError).code
+                switch code {
+                case 17007: //이미 가입한 계정일 때
+                    self.loginUser(withEmail: email, password: password)
+                default:
+                    self.errorDescriptionLabel.text = error.localizedDescription
+                }
+            } else {
+                self.showMainViewController()
+            }
         }
     }
     
@@ -57,6 +67,19 @@ class EnterEmailViewController: UIViewController {
         let mainViewController = storyboard.instantiateViewController(identifier: "MainViewController")
         mainViewController.modalPresentationStyle = .fullScreen
         self.navigationController?.show(mainViewController, sender: nil)
+    }
+    
+    ///Firebase 인증 로그인
+    func loginUser(withEmail email: String, password: String) {
+        Auth.auth().signIn(withEmail: email, password: password) {[weak self] _, error in
+            guard let self = self else { return }
+            
+            if let error = error {
+                self.errorDescriptionLabel.text = error.localizedDescription
+            } else {
+                self.showMainViewController()
+            }
+        }
     }
 }
 
